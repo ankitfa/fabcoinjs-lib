@@ -69,3 +69,11 @@ Some examples interact (via HTTPS) with a 3rd Party Blockchain Provider (3PBP).
 - [Generate a dual-key stealth address (randomly)](https://github.com/ankitfa/fabcoinjs-lib/tree/master/test/integration/stealth.js#L147)
 
 If you have a use case that you feel could be listed here, please [ask for it](https://github.com/ankitfa/fabcoinjs-lib/issues/new)!
+
+
+### Running the test suite
+
+``` bash
+npm test
+npm run-script coverage
+```
