@@ -80,5 +80,5 @@ npm run-script coverage
 
 ## Installation
 ``` bash
-npm install bitcoinjs-lib
+npm install fabcoinjs
 ```
