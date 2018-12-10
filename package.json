@@ -1,6 +1,6 @@
 {
   "name": "fabcoinjs",
-  "version": "4.0.3",
+  "version": "1.0.0",
   "description": "Client-side Fabcoin JavaScript library",
   "main": "./src/index.js",
   "engines": {
