@@ -77,3 +77,8 @@ If you have a use case that you feel could be listed here, please [ask for it](h
 npm test
 npm run-script coverage
 ```
+
+## Installation
+``` bash
+npm install bitcoinjs-lib
+```
