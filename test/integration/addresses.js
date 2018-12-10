@@ -107,7 +107,7 @@ describe('fabcoinjs-lib (addresses)', function () {
 
     dhttp({
       method: 'GET',
-      url: 'https://blockchain.info/rawaddr/' + address
+      url: 'http://fabexplorer.com:8666/transactions?address=' + address
     }, function (err, result) {
       if (err) return done(err)
 
