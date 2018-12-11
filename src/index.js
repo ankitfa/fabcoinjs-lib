@@ -5,6 +5,7 @@ const opcodes = require('./fabsc-opcodes')
 const networks = require('./networks')
 const axios = require('axios')
 const payments = require('./payments')
+const ECPair = require('./ecpair')
 
 const apiExistAddress = ':9001/fabapi/existaddress/'
 /**
@@ -33,6 +34,20 @@ var checkAPIStatus = async function (apiEndPoint) {
   return res
 }
 
+/**
+ *
+ * @param {string} mnemonics
+ * @param {Number} account
+ * @param {Number} chainType
+ * @param {Number} addressIndex
+ * @returns  keypair for the given mnemonic and point in the hierarchy
+ */
+var getKeyPairInWif = function (mnemonics, account, chainType, addressIndex) {
+  let mn = bip39.mnemonicToSeed(mnemonics)
+  let ad = bip32.fromSeed(mn, networks.fabcoin).derivePath('m/44/0\'/' + Number(account).toString() + '\'/' + Number(chainType).toString() + '/' + Number(addressIndex).toString())
+  return ECPair.fromWIF(ad.toWIF(), networks.fabcoin).toWIF()
+}
+
 module.exports = {
   Block: require('./block'),
   ECPair: require('./ecpair'),
@@ -49,5 +64,6 @@ module.exports = {
   web3: require('web3-eth-abi'),
   opcodes: opcodes,
   script: script,
-  checkAPIStatus
+  checkAPIStatus,
+  getKeyPairInWif
 }
